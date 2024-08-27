@@ -1,0 +1,149 @@
+@layer reset {
+  body {
+    margin: unset;
+  }
+
+  img:not(p *) {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    text-decoration: unset;
+    color: unset;
+  }
+
+  figure {
+    margin: unset;
+  }
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+}
+
+body {
+  font-size: 0.875rem;
+  font-family: "Inter", sans-serif;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 8%);
+}
+
+.demo {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @scope (&) {
+    figcaption {
+      flex-grow: 1;
+      flex-basis: 0px;
+    }
+  }
+}
+
+.profileCard {
+  background-color: hsl(0, 0%, 12%);
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 10px;
+
+  .desc {
+    margin-inline: 1rem;
+
+    > * {
+      margin-block: 2em;
+    }
+
+    > :first-child {
+      margin-block-start: 0px;
+    }
+  }
+
+  > :last-child {
+    margin-block-end: 0px;
+  }
+}
+
+img {
+  border-radius: 50%;
+  margin-inline: auto;
+  width: 90px;
+}
+
+.name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.location {
+  margin-top: 10px;
+  color: hsl(75, 94%, 57%);
+  font-weight: 600;
+}
+
+.socials {
+  padding-inline-start: unset;
+  list-style: none;
+  font-weight: 600;
+
+  li {
+    &:not(:first-child, :last-child) {
+      margin-block: 1rem;
+    }
+
+    a {
+      box-sizing: border-box;
+      width: 100%;
+      display: inline-block;
+      padding: 1em;
+      border-radius: 10px;
+      background-color: hsl(0, 0%, 20%);
+
+      &:is(:hover, :focus) {
+        color: hsl(0, 0%, 8%);
+        background-color: hsl(75, 94%, 57%);
+      }
+    }
+  }
+}
+
+@media (min-width: 60em) {
+  .profileCard {
+    padding: 2.5rem;
+
+    .desc {
+      margin-inline: 1.5rem;
+    }
+  }
+}
+
+.attribution a:hover {
+  text-decoration: white underline;
+}
+
+@layer helpers {
+  .align-content\:_end\; {
+    align-content: end;
+  }
+
+  .gradient-text {
+    background-image: linear-gradient(
+      90deg,
+      hsl(240, 100%, 75%),
+      hsl(0, 100%, 63%)
+    );
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0.05em 0.05em 0px #4444dd);
+  }
+
+  .big-1 {
+    font-size: 2em;
+  }
+}
